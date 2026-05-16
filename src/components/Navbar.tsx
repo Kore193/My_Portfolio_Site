@@ -35,17 +35,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isOpen]);
-
   return (
     <nav
       className={cn(
@@ -56,6 +45,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <motion.a
           href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="text-2xl font-bold text-gradient"
@@ -71,6 +64,14 @@ export default function Navbar() {
               <motion.a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector(link.href);
+                  if (element) {
+                    const top = element.getBoundingClientRect().top + window.scrollY - 100;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                  }
+                }}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
@@ -101,6 +102,14 @@ export default function Navbar() {
           </a>
           <motion.a
             href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.querySelector('#contact');
+              if (element) {
+                const top = element.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({ top, behavior: 'smooth' });
+              }
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="hidden md:flex px-5 py-2.5 bg-primary text-white text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 items-center gap-2"
@@ -131,7 +140,16 @@ export default function Navbar() {
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsOpen(false);
+                      document.body.style.overflow = 'unset';
+                      const element = document.querySelector(link.href);
+                      if (element) {
+                        const top = element.getBoundingClientRect().top + window.scrollY - 100;
+                        window.scrollTo({ top, behavior: 'smooth' });
+                      }
+                    }}
                     className={cn(
                       "text-sm font-bold uppercase tracking-widest transition-all p-4 rounded-xl text-center",
                       isActive ? "bg-primary text-white" : "text-white/80 hover:text-white hover:bg-white/10 border border-transparent"

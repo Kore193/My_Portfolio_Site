@@ -11,42 +11,31 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     setShowError(false);
-
+    
     const form = e.currentTarget;
     const data = new FormData(form);
     const name = data.get('name') as string;
     const email = data.get('email') as string;
     const message = data.get('message') as string;
+    
+    const encode = (data: Record<string, string>) => {
+      return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+    };
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/koresushant193@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          message,
-          _subject: `New contact form submission from ${name}`,
-        })
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", name, email, message })
       });
-
-      if (response.ok) {
-        setShowSuccess(true);
-        form.reset();
-        
-        // Hide popup after 5 seconds
-        setTimeout(() => {
-          setShowSuccess(false);
-        }, 5000);
-      } else {
-        setShowError(true);
-        setTimeout(() => setShowError(false), 5000);
-      }
+      
+      setShowSuccess(true);
+      form.reset();
+      setTimeout(() => setShowSuccess(false), 5000);
     } catch (error) {
-      console.error(error);
+      console.log(error);
       setShowError(true);
       setTimeout(() => setShowError(false), 5000);
     } finally {
@@ -112,7 +101,13 @@ export default function Contact() {
             viewport={{ once: true }}
             className="p-8 rounded-[32px] glass relative overflow-hidden"
           >
-            <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
+            <form 
+              name="contact"
+              data-netlify="true"
+              onSubmit={handleSubmit} 
+              className="space-y-6"
+            >
+              <input type="hidden" name="form-name" value="contact" />
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-text-dim ml-1">Name</label>

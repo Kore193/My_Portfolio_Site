@@ -55,18 +55,28 @@ export default function Skills() {
               transition={{ delay: idx * 0.1 }}
               className="glass p-8 rounded-[24px] group"
             >
-              <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <motion.div 
+                initial={{ scale: 0.5, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 + 0.1, duration: 0.3 }}
+                className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
                 {category.icon}
-              </div>
+              </motion.div>
               <h3 className="text-[10px] font-bold uppercase tracking-widest text-primary mb-6">{category.title}</h3>
               <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span
+                {category.skills.map((skill, skillIdx) => (
+                  <motion.span
                     key={skill}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 + skillIdx * 0.05 + 0.2, duration: 0.3 }}
                     className="px-4 py-2 text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 rounded-full text-white hover:bg-white/10 transition-colors"
                   >
                     {skill}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
             </motion.div>

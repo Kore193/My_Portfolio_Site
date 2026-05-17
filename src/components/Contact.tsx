@@ -5,6 +5,7 @@ import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, CheckCircle2, Loa
 export default function Contact() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("Unable to send your message. Please try again later.");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -17,27 +18,34 @@ export default function Contact() {
     const name = data.get('name') as string;
     const email = data.get('email') as string;
     const message = data.get('message') as string;
-    
-    const encode = (data: Record<string, string>) => {
-      return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-    };
 
     try {
-      await fetch("/", {
+      const response = await fetch("https://formspree.io/f/mzdwpjbp", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", name, email, message })
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, email, message })
       });
+      
+      const result = await response.json();
+      
+      if (!response.ok) {
+        if (result.errors) {
+          throw new Error(result.errors.map((err: any) => err.message).join(", "));
+        }
+        throw new Error("Formspree error");
+      }
       
       setShowSuccess(true);
       form.reset();
       setTimeout(() => setShowSuccess(false), 5000);
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
+      setErrorMessage(error.message || "Unable to send your message. Please try again later.");
       setShowError(true);
-      setTimeout(() => setShowError(false), 5000);
+      setTimeout(() => setShowError(false), 8000);
     } finally {
       setIsSubmitting(false);
     }
@@ -104,7 +112,7 @@ export default function Contact() {
             <form 
               name="contact"
               data-netlify="true"
-              onSubmit={handleSubmit} 
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
               <input type="hidden" name="form-name" value="contact" />
@@ -194,8 +202,8 @@ export default function Contact() {
                     <AlertCircle size={40} />
                   </motion.div>
                   <h3 className="text-2xl font-black text-white mb-2">Something went wrong!</h3>
-                  <p className="text-text-dim text-sm max-w-[250px]">
-                    Unable to send your message. Please try again later.
+                  <p className="text-text-dim text-sm max-w-[280px]">
+                    {errorMessage}
                   </p>
                 </motion.div>
               )}

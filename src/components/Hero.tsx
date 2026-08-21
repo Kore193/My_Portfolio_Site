@@ -20,7 +20,7 @@ export default function Hero() {
         >
           <span className="inline-block px-4 py-1.5 mb-8 text-[10px] font-bold tracking-[0.2em] uppercase bg-white/5 border border-white/10 rounded-full text-primary">
             <span className="dot-indicator inline-block mr-2 align-middle" />
-            Available for Internships
+            Available for Roles
           </span>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-[-0.03em] leading-[1.1] text-white">
             Building real-world solutions<br className="hidden sm:block" />

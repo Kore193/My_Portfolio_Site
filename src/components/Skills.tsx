@@ -6,27 +6,32 @@ const skillCategories = [
   {
     title: 'Programming',
     icon: <Terminal className="text-primary" />,
-    skills: ['Python'],
+    skills: ['Python', 'SQL'],
   },
   {
-    title: 'Web Technologies',
+    title: 'Libraries',
     icon: <Layout className="text-secondary" />,
-    skills: ['HTML', 'CSS', 'JavaScript'],
+    skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
   },
   {
-    title: 'Data Analysis',
-    icon: <Database className="text-accent" />,
-    skills: ['Pandas', 'NumPy', 'Matplotlib'],
+    title: 'Machine Learning',
+    icon: <Cpu className="text-accent" />,
+    skills: ['Regression', 'Classification', 'Clustering', 'Model Evaluation'],
   },
   {
-    title: 'Database & Tools',
-    icon: <GitBranch className="text-primary" />,
-    skills: ['MySQL', 'Git', 'GitHub', 'VS Code'],
+    title: 'Visualization & BI',
+    icon: <Database className="text-primary" />,
+    skills: ['Power BI', 'DAX', 'Tableau', 'Excel'],
+  },
+  {
+    title: 'Databases & Tools',
+    icon: <GitBranch className="text-secondary" />,
+    skills: ['MySQL', 'Git', 'GitHub', 'AWS', 'Jupyter'],
   },
   {
     title: 'Core Concepts',
-    icon: <Code2 className="text-secondary" />,
-    skills: ['OOP', 'Data Structures', 'DBMS'],
+    icon: <Code2 className="text-accent" />,
+    skills: ['Statistics', 'EDA', 'Data Modeling', 'Data Cleaning'],
   },
 ];
 
@@ -45,7 +50,7 @@ export default function Skills() {
           </motion.h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, idx) => (
             <motion.div
               key={category.title}

@@ -27,8 +27,8 @@ export default function About() {
               {/* Stats Overlay */}
               <div className="absolute -bottom-6 -right-6 glass p-6 rounded-2xl border-white/10 shadow-2xl hidden md:block">
                 <div className="flex items-center gap-4">
-                  <div className="text-3xl font-black text-primary">Final</div>
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-text-dim leading-tight">Year B.Tech<br />CSE Student</div>
+                  <div className="text-3xl font-black text-primary">Intern</div>
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-text-dim leading-tight">Data Analyst<br />at Cloudblitz</div>
                 </div>
               </div>
             </div>
@@ -49,9 +49,9 @@ export default function About() {
               Sushant <span className="text-gradient">Kore</span>
             </h2>
             <p className="text-text-dim text-lg mb-8 leading-relaxed">
-              I am an aspiring Data Analyst with strong foundations in Python, SQL, and data visualization. 
-              Experienced in building machine learning models and data-driven web applications. 
-              I am passionate about extracting insights from data and solving real-world problems.
+              B.Tech Computer Science graduate with hands-on experience in Python, SQL, Power BI, Excel, and data visualization. 
+              Skilled in data cleaning, EDA, statistics, and developing data-driven projects to generate actionable insights. 
+              Currently working as a Data Analyst Intern, gaining practical experience in real-time e-commerce analytics.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6 mb-10">
@@ -59,21 +59,21 @@ export default function About() {
                 <div className="dot-indicator" />
                 <div>
                   <h4 className="text-[10px] font-bold uppercase tracking-widest text-text-dim">Location</h4>
-                  <p className="text-sm text-white">Pune, Maharashtra</p>
+                  <p className="text-sm text-white">Pune, India</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
                 <div className="dot-indicator" />
                 <div>
                   <h4 className="text-[10px] font-bold uppercase tracking-widest text-text-dim">Education</h4>
-                  <p className="text-sm text-white">B.Tech CSE (CGPA: 8.18)</p>
+                  <p className="text-sm text-white">B.Tech CSE (2023 - 2026)</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
                 <div className="dot-indicator" />
                 <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-text-dim">Hobbies</h4>
-                  <p className="text-sm text-white">Cricket & Badminton</p>
+                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-text-dim">Role</h4>
+                  <p className="text-sm text-white">Data Analyst Intern</p>
                 </div>
               </div>
             </div>

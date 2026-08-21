@@ -4,42 +4,35 @@ import { Award, Target, Rocket, BookOpen, Trophy, Star } from 'lucide-react';
 
 const experiences = [
   {
-    title: 'Android Development Intern',
-    organization: 'Quiz App Project',
-    period: 'Internship',
-    description: 'Developed a native Android application using Java and Android Studio. Improved app performance and usability, securing 1st position among 10+ teams. Designed a clean and user-friendly interface.',
+    title: 'Data Analyst Intern',
+    organization: 'Cloudblitz Technologies, Pune',
+    period: 'Feb 2026 - Present',
+    description: 'Worked on a live project "Real-Time E-commerce Sales Trends Analytics Dashboard". Developed interactive dashboards for monitoring sales trends using real-time data. Gained hands-on experience in data collection, ETL pipelines, and data cleaning.',
     icon: <Rocket className="text-primary" />,
   },
   {
-    title: 'B.Tech in Computer Science and Engineering',
-    organization: 'Fabtech College of Engineering',
-    period: 'Expected: 2026',
-    description: 'Currently pursuing B.Tech with a CGPA of 8.18. Focusing on software development, AI, and data analytics.',
+    title: 'B.Tech in Computer Science Engineering',
+    organization: 'Fabtech College of Engineering, Sangola',
+    period: '2023 - 2026',
+    description: 'Focusing on software development, AI, and data analytics.',
     icon: <BookOpen className="text-secondary" />,
-  },
-  {
-    title: 'Diploma in Computer Technology',
-    organization: 'Brahmedev Mane Polytechnic',
-    period: '2023',
-    description: 'Completed diploma with 75.89%. Built strong foundational knowledge in computer science and programming.',
-    icon: <Target className="text-accent" />,
   },
 ];
 
 const goals = [
   {
-    title: 'Hackathon Participant',
-    description: 'Participated in hackathons at SKN College & Fabtech College (2025).',
+    title: 'Data Analytics Certificate',
+    description: 'Successfully completed Data Analytics certification from Udemy.',
     icon: <Trophy className="text-primary" />,
   },
   {
-    title: '1st Position in Android Quiz App',
-    description: 'Secured 1st position in the Android Quiz App competition among 10+ teams.',
+    title: 'Artificial Intelligence Fundamentals',
+    description: 'Certified in AI Fundamentals by IBM.',
     icon: <Award className="text-secondary" />,
   },
   {
-    title: 'Barclays Soft Skills Program',
-    description: 'Successfully completed the Barclays Soft Skills Development Program (2023).',
+    title: 'Hackathon Participant',
+    description: 'Participated in hackathons at SKN College & Fabtech College (2025).',
     icon: <Star className="text-accent" />,
   },
 ];
@@ -128,8 +121,7 @@ export default function Experience() {
                 Career Objective
               </h3>
               <p className="text-text-dim text-sm italic leading-relaxed">
-                "Aspiring Data Analyst passionate about extracting insights from data and solving real-world problems. 
-                Experienced in building machine learning models and data-driven web applications."
+                "B.Tech Computer Science graduate with hands-on experience in Python, SQL, Power BI, Excel, and data visualization. Skilled in data cleaning, EDA, statistics, and developing data-driven projects to generate actionable insights. Seeking an entry-level Data Analyst role to apply my analytical and problem-solving skills."
               </p>
             </motion.div>
           </div>

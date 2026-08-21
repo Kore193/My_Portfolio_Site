@@ -4,64 +4,34 @@ import { Github, ExternalLink, Brain, BarChart3, Globe, Code, ShoppingCart, User
 
 const projects = [
   {
-    title: 'Pomegranate Fruit Disease Detection',
-    description: 'An image classification model built to identify diseases in pomegranate fruits using computer vision and the ResNet34 architecture.',
-    tech: ['Roboflow', 'ResNet34', 'HTML', 'CSS', 'JavaScript'],
-    features: [
-      'Collected and managed dataset using Roboflow',
-      'Image preprocessing and labeling',
-      'Trained and evaluated using Roboflow pipeline',
-      'Integrated model output into a web interface'
-    ],
-    github: 'https://github.com/Kore193/Pomoguard_Project',
-    image: '/pomegranate-app.png',
-    icon: <Brain className="text-primary" />,
-    featured: true,
-  },
-  {
     title: 'Netflix Data Analysis',
-    description: 'Analyzes Netflix dataset to uncover insights on content types, top-producing countries, genres, ratings, and platform growth using Python.',
-    tech: ['Python', 'Pandas', 'Seaborn', 'Matplotlib'],
+    description: 'Analyzed content trends across genres, ratings, release years, and countries on a Netflix dataset of 8,000+ titles to uncover patterns in content strategy and audience preferences.',
+    tech: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
     features: [
-      'Data cleaning and preprocessing',
-      'Content and genre trend analysis',
-      'Growth metrics visualization',
+      'Data cleaning & missing values handling',
+      'Exploratory Data Analysis (EDA)',
+      '10+ visualizations (heatmaps, trend lines)',
       'Actionable business insights'
     ],
     github: 'https://github.com/Kore193/Netflix-Data-Analysis',
     image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80',
     icon: <BarChart3 className="text-secondary" />,
-    featured: false,
+    featured: true,
   },
   {
-    title: 'E-commerce Store',
-    description: 'A responsive and interactive E-commerce store application featuring a product catalog and shopping cart functionality.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
+    title: 'Global Superstore Sales Analysis',
+    description: 'Performed end-to-end retail sales analysis on 9,788+ records. Developed business-focused KPIs and interactive dashboards to track sales performance across regions and customer segments.',
+    tech: ['Python', 'SQL', 'Power BI'],
     features: [
-      'Dynamic product catalog',
-      'Interactive shopping cart',
-      'Responsive user interface',
-      'Clean and modern design'
+      'Data cleaning & transformation',
+      'SQL analysis & Power BI visualization',
+      'Regional & time-based sales trends',
+      'Strategic business recommendations'
     ],
-    github: 'https://github.com/Kore193/E-commerce_Store',
-    image: 'https://plus.unsplash.com/premium_photo-1683887064106-531532ecdf20?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHx8',
-    icon: <ShoppingCart className="text-accent" />,
-    featured: false,
-  },
-  {
-    title: 'Social Media Platform',
-    description: 'A simple social media platform allowing users to connect, share content, and interact with a dynamic feed.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    features: [
-      'User profile management',
-      'Interactive content feed',
-      'Responsive layout',
-      'Modern UI components'
-    ],
-    github: 'https://github.com/Kore193/Social_Media_Platform',
-    image: 'https://plus.unsplash.com/premium_photo-1684179641331-e89c6320b6a9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D',
-    icon: <Users className="text-primary" />,
-    featured: false,
+    github: 'https://github.com/Kore193/Global-Superstore-Sales-Analysis',
+    image: 'https://plus.unsplash.com/premium_photo-1683887064106-531532ecdf20?w=600&auto=format&fit=crop&q=60',
+    icon: <Globe className="text-primary" />,
+    featured: true,
   },
 ];
 
